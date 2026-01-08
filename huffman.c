@@ -1,8 +1,5 @@
 #include "huffman.h"
 
-#include <stdint.h>
-#include <stdio.h>
-
 #include "tree.h"
 
 typedef struct HuffCode {

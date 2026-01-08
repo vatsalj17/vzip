@@ -1,4 +1,5 @@
 *.o
 *.out
 *.vzip
+vzip
 struct*
