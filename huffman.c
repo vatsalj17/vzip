@@ -48,6 +48,7 @@ node_t* build_huffman_tree(uint64_t freq[256]) {
 	for (int i = 0; i < 256; i++) {
 		if (freq[i] > 0) {
 			node_t* node = node_init(i, freq[i]);
+            // printf("node to be pushed:- %c: %lu\n", (unsigned char)i, freq[i]);
 			heap_push(heap, node);
 		}
 	}
@@ -55,12 +56,15 @@ node_t* build_huffman_tree(uint64_t freq[256]) {
 	// build tree
 	while (!is_size_one(heap)) {
 		node_t* left = heap_pop(heap);
+        // printf("left => %c: %lu\n", (unsigned char)left->symbol, left->freq);
 		node_t* right = heap_pop(heap);
+        // printf("right=> %c: %lu\n", (unsigned char)right->symbol, right->freq);
 		node_t* top = node_init(0, left->freq + right->freq);
 		top->left = left;
 		top->right = right;
+        printf("top  => %c: %lu\n", (top->symbol == 0)? '0' : top->symbol, top->freq);
 		heap_push(heap, top);
-        printtree(heap_top(heap), 0);
+        // printtree(heap_top(heap), 0);
 	}
 	return heap_top(heap);
 }
@@ -75,6 +79,10 @@ void printtree(node_t* root, int level) {
 
 void build_code_table(node_t* root, huff_code table[256], uint32_t code, int level) {
     if (!root) return;
+    if (level > 32) {
+        printf("failed\n");
+        abort();
+    }
     if (is_leaf(root)) {
         table[root->symbol].bits = code;
         table[root->symbol].length = level;
