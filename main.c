@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 #include "huffman.h"
+#include "utils.h"
 
 int main(int argc, char** argv) {
 	if (argc < 2) {
@@ -15,18 +16,12 @@ int main(int argc, char** argv) {
 	}
 	uint64_t freq[256] = {0};
 	build_frequency_table(f, freq);
-	printf("Frequency:- \n");
-	for (int i = 0; i < 256; i++) {
-		if (freq[i]) printf("%d => %c: %lu\n", i, (unsigned char)i, freq[i]);
-	}
 	fclose(f);
 	node_t* tree = build_huffman_tree(freq);
 	// printf("\nTree:-\n");
 	// printtree(tree, 0);
 	huff_code table[256] = {0};
 	build_code_table(tree, table, 0, 0);
-	// printf("Codes:- \n");
-	// for (int i = 0; i < 256; i++) {
-	// 	if (table[i].length) printf("%d => %c: %b\n", i, (unsigned char)i, table[i].bits);
-	// }
+    print_codes(table, freq);
+	free_tree(tree);
 }

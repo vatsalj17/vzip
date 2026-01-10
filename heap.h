@@ -15,5 +15,6 @@ bool is_size_one(heap_t* heap);
 void* heap_top(heap_t* heap);
 void heap_push(heap_t* heap, void* data);
 void* heap_pop(heap_t* heap);
+void heap_destroy(heap_t* heap);
 
 #endif
