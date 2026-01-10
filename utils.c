@@ -19,3 +19,11 @@ void print_codes(huff_code table[256], uint64_t freq[256]) {
 		}
 	}
 }
+
+void print_help() {
+    printf("Usage: vzip [OPTION] <FILE>\n\n");
+    printf("Options:\n");
+    printf("  -c, --compress    Compress <FILE> to <FILE>.vzip\n");
+    printf("  -d, --decompress  Decompress <FILE>.vzip to original file\n");
+    printf("  -h, --help        Show this help message\n");
+}

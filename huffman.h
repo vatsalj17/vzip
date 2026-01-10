@@ -1,11 +1,16 @@
 #ifndef HUFFMAN_H
 #define HUFFMAN_H
 
+#include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
-#include <stdbool.h>
 
-typedef struct Node  node_t;
+typedef struct Node {
+	unsigned char symbol;
+	uint64_t freq;
+	struct Node* left;
+	struct Node* right;
+} node_t;
 
 typedef struct HuffCode {
 	uint32_t bits;
@@ -13,7 +18,6 @@ typedef struct HuffCode {
 } huff_code;
 
 node_t* node_init(unsigned char symbol, uint64_t frequency);
-int node_comparator(const void* a, const void* b);
 node_t* build_huffman_tree(uint64_t freq[256]);
 bool is_leaf(node_t* n);
 void printtree(node_t* root, int level);

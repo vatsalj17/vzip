@@ -4,13 +4,6 @@
 #include <assert.h>
 #include "heap.h"
 
-typedef struct Node {
-	unsigned char symbol;
-	uint64_t freq;
-	struct Node* left;
-	struct Node* right;
-} node_t;
-
 node_t* node_init(unsigned char symbol, uint64_t frequency) {
 	node_t* new = malloc(sizeof(node_t));
 	new->freq = frequency;
