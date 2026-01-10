@@ -1,0 +1,98 @@
+[
+  {
+    "file": "src/compress.c",
+    "arguments": [
+      "gcc",
+      "-g",
+      "-Wall",
+      "-Wextra",
+      "-Iinclude",
+      "-c",
+      "src/compress.c",
+      "-o",
+      "obj/compress.o"
+    ],
+    "directory": "/home/Vatsal/Codes/C/Projects/vzip",
+    "output": "obj/compress.o"
+  },
+  {
+    "file": "src/fileio.c",
+    "arguments": [
+      "gcc",
+      "-g",
+      "-Wall",
+      "-Wextra",
+      "-Iinclude",
+      "-c",
+      "src/fileio.c",
+      "-o",
+      "obj/fileio.o"
+    ],
+    "directory": "/home/Vatsal/Codes/C/Projects/vzip",
+    "output": "obj/fileio.o"
+  },
+  {
+    "file": "src/heap.c",
+    "arguments": [
+      "gcc",
+      "-g",
+      "-Wall",
+      "-Wextra",
+      "-Iinclude",
+      "-c",
+      "src/heap.c",
+      "-o",
+      "obj/heap.o"
+    ],
+    "directory": "/home/Vatsal/Codes/C/Projects/vzip",
+    "output": "obj/heap.o"
+  },
+  {
+    "file": "src/huffman.c",
+    "arguments": [
+      "gcc",
+      "-g",
+      "-Wall",
+      "-Wextra",
+      "-Iinclude",
+      "-c",
+      "src/huffman.c",
+      "-o",
+      "obj/huffman.o"
+    ],
+    "directory": "/home/Vatsal/Codes/C/Projects/vzip",
+    "output": "obj/huffman.o"
+  },
+  {
+    "file": "src/main.c",
+    "arguments": [
+      "gcc",
+      "-g",
+      "-Wall",
+      "-Wextra",
+      "-Iinclude",
+      "-c",
+      "src/main.c",
+      "-o",
+      "obj/main.o"
+    ],
+    "directory": "/home/Vatsal/Codes/C/Projects/vzip",
+    "output": "obj/main.o"
+  },
+  {
+    "file": "src/utils.c",
+    "arguments": [
+      "gcc",
+      "-g",
+      "-Wall",
+      "-Wextra",
+      "-Iinclude",
+      "-c",
+      "src/utils.c",
+      "-o",
+      "obj/utils.o"
+    ],
+    "directory": "/home/Vatsal/Codes/C/Projects/vzip",
+    "output": "obj/utils.o"
+  }
+]

@@ -1,14 +1,26 @@
 CC = gcc
 CFLAGS = -g -Wall -Wextra
 
-SRCS = $(wildcard ./*.c)
-INCS = $(wildcard ./*.h)
+SRCDIR = src
+INCDIR = include
+OBJ = obj
+CFLAGS += -I$(INCDIR)
+
+SRCS = $(wildcard $(SRCDIR)/*.c)
+OBJS = $(patsubst $(SRCDIR)/%.c, $(OBJ)/%.o, $(SRCS))
+
 TARGET = vzip
 
 all: $(TARGET)
 
-$(TARGET): $(SRCS) $(INCS)
-	$(CC) $(CFLAGS) -o $@ $(SRCS)
+$(TARGET): $(OBJS)
+	$(CC) $(OBJS) -o $@ $(CFLAGS)
+
+$(OBJ)/%.o: $(SRCDIR)/%.c | $(OBJ)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJ):
+	mkdir -p $(OBJ)
 
 clean:
-	rm $(TARGET) *.vzip
+	rm -rf $(TARGET) $(OBJ)

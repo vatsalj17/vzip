@@ -15,7 +15,7 @@ void compress(const char* input_file, const char* output_file) {
 		fprintf(stderr, "fopen: %s couldn't be opened\n", input_file);
 		return;
 	}
-	printf("Compressing %s to %s .....", input_file, output_file);
+	printf("Compressing %s to %s .....\n", input_file, output_file);
 
 	uint64_t freq[256] = {0};
 	build_frequency_table(fi, freq);
@@ -47,7 +47,7 @@ void decompress(const char* compressed_file, const char* output_file) {
 		free(magic);
 		return;
 	}
-	printf("Decompressing %s to %s .....", compressed_file, output_file);
+	printf("Decompressing %s to %s .....\n", compressed_file, output_file);
 	uint64_t orig_size;
 	fread(&orig_size, sizeof(uint64_t), 1, fc);
 	uint64_t freq[256];
