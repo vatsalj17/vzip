@@ -11,4 +11,4 @@ $(TARGET): $(SRCS) $(INCS)
 	$(CC) $(CFLAGS) -o $@ $(SRCS)
 
 clean:
-	rm $(TARGET)
+	rm $(TARGET) *.vzip

@@ -1,5 +1,14 @@
 *.o
 *.out
 *.vzip
+*.txt
 vzip
 struct*
+*.mp4
+*.mp3
+*.png
+*.jgp
+*.jpeg
+*.pdf
+*.log
+test/
